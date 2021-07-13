@@ -28,7 +28,6 @@ refs.checkboxSwitch.addEventListener('change', () => {
     if (localStorage.getItem('theme') === 'dark-theme') {
         refs.body.classList.add(Theme.DARK);
     } else {
-        localStorage.removeItem('dark-theme');
         refs.body.classList.remove(Theme.DARK);
     }
 });
