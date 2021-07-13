@@ -488,4 +488,4 @@ var e=require("./_baseUniq");function r(r){return r&&r.length?e(r):[]}module.exp
 },{"babel-types":"Eq6v","./refs":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=r(require("./menu.json")),u=r(require("./menu-template.hbs"));function r(e){return e&&e.__esModule?e:{default:e}}require("./js/theme-switch");const s=document.querySelector(".js-menu");s.innerHTML=(0,u.default)(e.default);
 },{"./sass/main.scss":"clu1","./menu.json":"mA8c","./menu-template.hbs":"aTls","./js/theme-switch":"JIhF"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10-food-service/src.4a553dab.js.map
+//# sourceMappingURL=/goit-js-hw-10-food-service/src.7389cc91.js.map
