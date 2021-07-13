@@ -1,9 +1,17 @@
+import { classBody } from 'babel-types';
 import refs from './refs';
 
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
+
+
+if (localStorage.getItem('theme') === Theme.DARK) {
+    refs.body.classList.add(Theme.DARK);
+    refs.checkboxSwitch.checked = true;
+};
+
 
 const setLocalStorage = theme => {
     try {
@@ -13,23 +21,21 @@ const setLocalStorage = theme => {
     }
 };
 
+const toggleClass = (addClass, removeClass) => {
+    refs.body.classList.add(addClass);
+    refs.body.classList.remove(removeClass);
+}
 
 refs.checkboxSwitch.addEventListener('change', () => {
-    let checkboxSwitchChecked = event.target.checked;
 
-    if (checkboxSwitchChecked) {
-        // refs.body.classList.add(Theme.DARK);
+    if (refs.checkboxSwitch.checked) {
+        toggleClass(Theme.DARK, Theme.LIGHT)
         setLocalStorage(Theme.DARK);
     } else {
-        // refs.body.classList.remove(Theme.DARK);
+        toggleClass(Theme.LIGHT, Theme.DARK)
         setLocalStorage(Theme.LIGHT);
     };
 
-    if (localStorage.getItem('theme') === 'dark-theme') {
-        refs.body.classList.add(Theme.DARK);
-    } else {
-        refs.body.classList.remove(Theme.DARK);
-    }
 });
 
 
