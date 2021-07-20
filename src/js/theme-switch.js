@@ -9,26 +9,9 @@ const Theme = {
 refs.body.classList.add(
     localStorage.getItem('theme') ? localStorage.getItem('theme') : Theme.LIGHT);
 
-if (refs.body.classList.value === Theme.DARK) {
+if (localStorage.getItem('theme') === Theme.DARK) {
     refs.checkboxSwitch.checked = true;
 }
-    
-// const currentTheme = localStorage.getItem('theme');
-
-// if (currentTheme) {
-//     document.documentElement.setAttribute('theme', currentTheme);
-//     if (currentTheme === Theme.DARK) {
-//     refs.checkboxSwitch.checked = true;
-//     refs.body.classList.toggle(Theme.DARK);
-//     }
-// }
-
-// if (localStorage.getItem('theme') === Theme.DARK) {
-//     refs.body.classList.add(Theme.DARK);
-//     refs.checkboxSwitch.checked = true;
-// }
-
-
 
 const setLocalStorage = theme => {
     try {
@@ -54,15 +37,3 @@ refs.checkboxSwitch.addEventListener('change', () => {
     };
 
 });
-
-// function switchTheme(event) {
-//     if (event.target.checked) {
-//     refs.body.classList.toggle(Theme.DARK);
-//     setLocalStorage(Theme.DARK);
-//     } else {
-//     refs.body.classList.toggle(Theme.DARK);
-//     setLocalStorage(Theme.LIGHT);  
-// }
-// }
-
-// refs.checkboxSwitch.addEventListener('change', switchTheme, false);
