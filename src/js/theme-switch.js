@@ -6,6 +6,7 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
+refs.checkboxSwitch.checked = false;
 
 if (localStorage.getItem('theme') === Theme.DARK) {
     refs.body.classList.add(Theme.DARK);
