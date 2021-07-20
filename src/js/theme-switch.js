@@ -12,7 +12,7 @@ if (currentTheme) {
     refs.body.setAttribute('theme', currentTheme);
     if (currentTheme === Theme.DARK) {
     refs.checkboxSwitch.checked = true;
-    refs.body.classList.add(Theme.DARK);
+    refs.body.classList.toggle(Theme.DARK);
     }
 }
 
@@ -31,10 +31,10 @@ const setLocalStorage = theme => {
     }
 };
 
-const toggleClass = (addClass, removeClass) => {
-    refs.body.classList.add(addClass);
-    refs.body.classList.remove(removeClass);
-}
+// const toggleClass = (addClass, removeClass) => {
+//     refs.body.classList.add(addClass);
+//     refs.body.classList.remove(removeClass);
+// }
 
 // refs.checkboxSwitch.addEventListener('change', () => {
 
@@ -50,10 +50,10 @@ const toggleClass = (addClass, removeClass) => {
 
 function switchTheme(event) {
     if (event.target.checked) {
-        toggleClass(Theme.DARK, Theme.LIGHT);
+    refs.body.classList.toggle(Theme.DARK);
     setLocalStorage(Theme.DARK);
     } else {
-        toggleClass(Theme.LIGHT, Theme.DARK);
+    refs.body.classList.toggle(Theme.DARK);
     setLocalStorage(Theme.LIGHT);  
 }
 }
