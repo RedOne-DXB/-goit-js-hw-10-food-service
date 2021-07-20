@@ -19,11 +19,7 @@ if (currentTheme) {
 // if (localStorage.getItem('theme') === Theme.DARK) {
 //     refs.body.classList.add(Theme.DARK);
 //     refs.checkboxSwitch.checked = true;
-// } else {
-//     toggleClass(Theme.DARK, Theme.LIGHT);
-//     refs.checkboxSwitch.checked = false;
-// };
-
+// }
 
 
 
@@ -40,15 +36,26 @@ const toggleClass = (addClass, removeClass) => {
     refs.body.classList.remove(removeClass);
 }
 
-refs.checkboxSwitch.addEventListener('change', () => {
+// refs.checkboxSwitch.addEventListener('change', () => {
 
-    if (refs.checkboxSwitch.checked) {
-        toggleClass(Theme.DARK, Theme.LIGHT)
-        setLocalStorage(Theme.DARK);
+//     if (refs.checkboxSwitch.checked) {
+//         toggleClass(Theme.DARK, Theme.LIGHT)
+//         setLocalStorage(Theme.DARK);
+//     } else {
+//         toggleClass(Theme.LIGHT, Theme.DARK)
+//         setLocalStorage(Theme.LIGHT);
+//     };
+
+// });
+
+function switchTheme(event) {
+    if (event.target.checked) {
+        toggleClass(Theme.DARK, Theme.LIGHT);
+    setLocalStorage(Theme.DARK);
     } else {
-        toggleClass(Theme.LIGHT, Theme.DARK)
-        setLocalStorage(Theme.LIGHT);
-    };
+        toggleClass(Theme.LIGHT, Theme.DARK);
+    setLocalStorage(Theme.LIGHT);  
+}
+}
 
-});
-
+refs.checkboxSwitch.addEventListener('change', switchTheme, false);
