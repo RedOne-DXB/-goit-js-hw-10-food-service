@@ -9,7 +9,7 @@ const Theme = {
 const currentTheme = localStorage.getItem('theme');
 
 if (currentTheme) {
-    refs.body.setAttribute('theme', currentTheme);
+    document.documentElement.setAttribute('theme', currentTheme);
     if (currentTheme === Theme.DARK) {
     refs.checkboxSwitch.checked = true;
     refs.body.classList.toggle(Theme.DARK);
